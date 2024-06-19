@@ -15,7 +15,7 @@ interface ModalProps {
     actionLabel?: string,
     disabled?: boolean,
     secondaryAction?: () => void,
-    secondaryLabel?: string;
+    secondaryActionLabel?: string;
 }
 
 const Modal: React.FC<ModalProps> = ({
@@ -28,7 +28,7 @@ const Modal: React.FC<ModalProps> = ({
     actionLabel,
     disabled,
     secondaryAction,
-    secondaryLabel
+    secondaryActionLabel
 }) => {
     const [showModal, setShowModal] = useState(isOpen);
 
@@ -37,7 +37,7 @@ const Modal: React.FC<ModalProps> = ({
     }, [isOpen])
 
     const handleClose = useCallback(() => {
-        if(disabled){
+        if (disabled) {
             return;
         }
 
@@ -49,7 +49,7 @@ const Modal: React.FC<ModalProps> = ({
     }, [disabled, onClose])
 
     const handleSubmit = useCallback(() => {
-        if(disabled){
+        if (disabled) {
             return;
         }
 
@@ -58,14 +58,14 @@ const Modal: React.FC<ModalProps> = ({
     }, [disabled, onSubmit])
 
     const handleSecondaryAction = useCallback(() => {
-        if(disabled || !secondaryAction) {
+        if (disabled || !secondaryAction) {
             return;
         }
         secondaryAction();
 
     }, [disabled, secondaryAction])
 
-    if(!isOpen){
+    if (!isOpen) {
         return null;
     }
 
@@ -79,8 +79,8 @@ const Modal: React.FC<ModalProps> = ({
                 lg:h-auto md:h-auto">
                     {/*CONTENT*/}
                     <div className={`translate duration-300 h-full 
-                        ${showModal? 'translate-y-0' : 'translate-y-full'} 
-                        ${showModal? 'opacity-100' : 'opacity-0'}`}>
+                        ${showModal ? 'translate-y-0' : 'translate-y-full'} 
+                        ${showModal ? 'opacity-100' : 'opacity-0'}`}>
                         <div className=" translate h-full lg:h-auto md:h-auto border-0 
                         rounded-lg shadow-lg relative flex flex-col w-full bg-white
                          outline-none focus:outline-none">
@@ -102,9 +102,16 @@ const Modal: React.FC<ModalProps> = ({
                             {/*FOOTER*/}
                             <div className=" flex flex-col gap-2 p-6">
                                 <div className="flex flex-row items-center gap-4 w-full">
+                                    {secondaryAction && secondaryActionLabel && (
+                                        <Button outline
+                                            disabled={disabled} label={secondaryActionLabel}
+                                            onClick={handleSecondaryAction}
+                                        />
+                                    )}
+
                                     <Button disabled={disabled} label={actionLabel}
-                                    onClick={handleSubmit}
-                                      />
+                                        onClick={handleSubmit}
+                                    />
                                 </div>
                             </div>
                         </div>
