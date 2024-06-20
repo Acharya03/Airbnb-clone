@@ -4,6 +4,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import ClientOnly from "./Components/ClientOnly";
 
 import RegisterModal from "./Components/modals/RegisterModal";
+import ToasterProvider from "./providers/ToasterProvider";
 
 
 
@@ -24,6 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={font.className}>
         <ClientOnly>
+          <ToasterProvider/>
           <RegisterModal />
           <Navbar />
         </ClientOnly>
