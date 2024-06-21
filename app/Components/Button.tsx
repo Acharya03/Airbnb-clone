@@ -12,7 +12,7 @@ interface ButtonProps {
 }
 
 
-const Button: React.FC<ButtonProps>= ({
+const Button: React.FC<ButtonProps> = ({
     label,
     onClick,
     disabled,

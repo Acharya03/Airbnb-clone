@@ -27,7 +27,7 @@ const RegisterModal = () => {
             email: '',
             password: ''
         }
-    })
+    });
 
     const onSubmit: SubmitHandler<FieldValues> = (data) => {
         setIsLoading(true);
