@@ -42,19 +42,19 @@ const LoginModal = () => {
             ...data,
             redirect: false,
         })
-        .then((callback) => {
-            setIsLoading(false);
+            .then((callback) => {
+                setIsLoading(false);
 
-            if(callback?.ok){
-                toast.success('Logged in');
-                router.refresh();
-                loginModal.onClose();
-            }
+                if (callback?.ok) {
+                    toast.success('Logged in');
+                    router.refresh();
+                    loginModal.onClose();
+                }
 
-            if(callback?.error){
-                toast.error(callback.error);
-            }
-        })
+                if (callback?.error) {
+                    toast.error(callback.error);
+                }
+            })
     }
 
     const toggle = useCallback(() => {
@@ -86,7 +86,7 @@ const LoginModal = () => {
                         First time using Airbnb?
                     </div>
                     <div onClick={toggle}
-                     className=" text-neutral-800 cursor-pointer hover:underline">
+                        className=" text-neutral-800 cursor-pointer hover:underline">
                         Create an account
                     </div>
                 </div>
