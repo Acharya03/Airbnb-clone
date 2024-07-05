@@ -8,7 +8,7 @@ import getListings from "./actions/getListings";
 
 export default async function Home() {
 	const listings = await getListings();
-	const currentUser = getCurrentUser();
+	const currentUser = await getCurrentUser();
 
 
 	if(listings.length == 0) {
