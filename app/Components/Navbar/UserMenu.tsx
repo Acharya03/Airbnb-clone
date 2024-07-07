@@ -54,6 +54,8 @@ const UserMenu: React.FC<UserMenuProps> = (
                     <div className=" flex flex-col cursor-pointer">
                         {currentUser ? (
                             <>
+                                <span className="px-4 py-3 font-semibold text-lg hover:cursor-default">Hi, {currentUser.name}</span>
+                                <hr/>
                                 <MenuItem onClick={() => { }} label="My Trips" />
                                 <MenuItem onClick={() => { }} label="My Favourites" />
                                 <MenuItem onClick={() => { }} label="My Reservations" />
