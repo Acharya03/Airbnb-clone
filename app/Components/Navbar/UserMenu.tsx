@@ -59,7 +59,7 @@ const UserMenu: React.FC<UserMenuProps> = (
                                 <span className="px-4 py-3 font-semibold text-lg hover:cursor-default">Hi, {currentUser.name}</span>
                                 <hr/>
                                 <MenuItem onClick={() => router.push("/trips")} label="My Trips" />
-                                <MenuItem onClick={() => { }} label="My Favourites" />
+                                <MenuItem onClick={() => router.push("/favourites")} label="My Favourites" />
                                 <MenuItem onClick={() => router.push("/reservations")} label="My Reservations" />
                                 <MenuItem onClick={() => { }} label="My Properties" />
                                 <MenuItem onClick={rentModal.onOpen} label="Airbnb my home" />
