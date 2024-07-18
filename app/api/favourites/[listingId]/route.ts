@@ -36,7 +36,7 @@ export async function POST(
         data: {
             favouriteIds
         }
-    })
+    });
 
     return NextResponse.json(user);
 }
@@ -69,7 +69,7 @@ export async function DELETE (
         data: {
             favouriteIds
         }
-    })
+    });
 
     return NextResponse.json(user);
 }
