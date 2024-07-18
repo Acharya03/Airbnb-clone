@@ -91,7 +91,6 @@ const SearchModal = () => {
         roomCount,
         bathroomCount,
         dateRange,
-        dateRange,
         onNext,
         params
     ]);
