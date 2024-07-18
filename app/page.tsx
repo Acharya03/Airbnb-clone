@@ -14,13 +14,15 @@ const Home = async ({ searchParams }: HomeProps) => {
 	const currentUser = await getCurrentUser();
 
 
-	if(listings.length == 0) {
+	if(listings.length === 0) {
 		return (
 			<ClientOnly>
 				<EmptyState showReset/>
 			</ClientOnly>
 		)
 	}
+
+	
 	return (
 		<ClientOnly>
 			<Container>
